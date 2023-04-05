@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 import serial
 
+PORT = "COM5"
+
 app = Flask(__name__)
 
 
@@ -12,7 +14,7 @@ def index():
 # <---------------- Температуры и влажности воздуха --------------->
 @app.route('/ppo_it/api/temp_hum/1')
 def index1():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"1")
     data_value = ser.readline().decode('utf-8').split()
     data = {
@@ -25,7 +27,7 @@ def index1():
 
 @app.route('/ppo_it/api/temp_hum/2')
 def index2():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"1")
     data_value = ser.readline().decode('utf-8').split()
     data = {
@@ -38,7 +40,7 @@ def index2():
 
 @app.route('/ppo_it/api/temp_hum/3')
 def index3():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"1")
     data_value = ser.readline().decode('utf-8').split()
     data = {
@@ -51,7 +53,7 @@ def index3():
 
 @app.route('/ppo_it/api/temp_hum/4')
 def index4():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"1")
     data_value = ser.readline().decode('utf-8').split()
     data = {
@@ -66,7 +68,7 @@ def index4():
 
 @app.route('/ppo_it/api/hum/1')
 def index5():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"2")
     data_value = ser.readline().decode('utf-8')
     data = {
@@ -78,7 +80,7 @@ def index5():
 
 @app.route('/ppo_it/api/hum/2')
 def index6():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"2")
     data_value = ser.readline().decode('utf-8')
     data = {
@@ -90,7 +92,7 @@ def index6():
 
 @app.route('/ppo_it/api/hum/3')
 def index7():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"2")
     data_value = ser.readline().decode('utf-8')
     data = {
@@ -102,7 +104,7 @@ def index7():
 
 @app.route('/ppo_it/api/hum/4')
 def index8():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"2")
     data_value = ser.readline().decode('utf-8')
     data = {
@@ -114,7 +116,7 @@ def index8():
 
 @app.route('/ppo_it/api/hum/5')
 def index9():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"2")
     data_value = ser.readline().decode('utf-8')
     data = {
@@ -126,7 +128,7 @@ def index9():
 
 @app.route('/ppo_it/api/hum/6')
 def index10():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"2")
     data_value = ser.readline().decode('utf-8')
     data = {
@@ -139,7 +141,7 @@ def index10():
 # <---------------- Сервопривод --------------->
 @app.route('/ppo_it/api/fork_drive/')
 def index11():
-    ser = serial.Serial("COM5", 9600)
+    ser = serial.Serial(PORT, 9600)
     ser.write(b"3")
     return "Hello"
 

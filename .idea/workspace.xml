@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ad90ea7-2d17-4714-bc11-70520a062020" name="Changes" comment="" />
+    <list default="true" id="9ad90ea7-2d17-4714-bc11-70520a062020" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberry-pi_code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberry-pi_code/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberry-pi_code/test-requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberry-pi_code/test-requests.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
