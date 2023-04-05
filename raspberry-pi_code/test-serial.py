@@ -1,6 +1,7 @@
 import serial
 
-ser = serial.Serial("COM5", 9600)
+# ser = serial.Serial("COM5", 9600)
 while True:
-    ser.write(b"Hello")
+    pin = 5
+    print(f"b'1{pin}'")
 

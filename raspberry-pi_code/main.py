@@ -14,11 +14,12 @@ def index():
 # <---------------- Температуры и влажности воздуха --------------->
 @app.route('/ppo_it/api/temp_hum/1')
 def index1():
+    pin = 2
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"1")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
-        'id': 1,
+        'pin': pin,
         'temperature': float(data_value[0]),
         'humidity': float(data_value[1])
     }
@@ -27,11 +28,12 @@ def index1():
 
 @app.route('/ppo_it/api/temp_hum/2')
 def index2():
+    pin = 3
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"1")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
-        'id': 2,
+        'pin': pin,
         'temperature': float(data_value[0]),
         'humidity': float(data_value[1])
     }
@@ -40,11 +42,12 @@ def index2():
 
 @app.route('/ppo_it/api/temp_hum/3')
 def index3():
+    pin = 4
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"1")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
-        'id': 3,
+        'pin': pin,
         'temperature': float(data_value[0]),
         'humidity': float(data_value[1])
     }
@@ -53,11 +56,12 @@ def index3():
 
 @app.route('/ppo_it/api/temp_hum/4')
 def index4():
+    pin = 5
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"1")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
-        'id': 4,
+        'pin': pin,
         'temperature': float(data_value[0]),
         'humidity': float(data_value[1])
     }
@@ -68,11 +72,12 @@ def index4():
 
 @app.route('/ppo_it/api/hum/1')
 def index5():
+    pin = 7
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"2")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
-        'id': 1,
+        'pin': pin,
         'humidity': float(data_value[1])
     }
     return jsonify(data)
@@ -80,11 +85,12 @@ def index5():
 
 @app.route('/ppo_it/api/hum/2')
 def index6():
+    pin = 8
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"2")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
-        'id': 2,
+        'pin': pin,
         'humidity': float(data_value[1])
     }
     return jsonify(data)
@@ -92,11 +98,12 @@ def index6():
 
 @app.route('/ppo_it/api/hum/3')
 def index7():
+    pin = 9
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"2")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
-        'id': 3,
+        'pin': pin,
         'humidity': float(data_value[1])
     }
     return jsonify(data)
@@ -104,11 +111,12 @@ def index7():
 
 @app.route('/ppo_it/api/hum/4')
 def index8():
+    pin = 10
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"2")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
-        'id': 4,
+        'pin': pin,
         'humidity': float(data_value[1])
     }
     return jsonify(data)
@@ -116,11 +124,12 @@ def index8():
 
 @app.route('/ppo_it/api/hum/5')
 def index9():
+    pin = 11
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"2")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
-        'id': 5,
+        'pin': pin,
         'humidity': float(data_value[1])
     }
     return jsonify(data)
@@ -128,11 +137,12 @@ def index9():
 
 @app.route('/ppo_it/api/hum/6')
 def index10():
+    pin = 12
     ser = serial.Serial(PORT, 9600)
-    ser.write(b"2")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
-        'id': 6,
+        'pin': pin,
         'humidity': float(data_value[1])
     }
     return jsonify(data)
