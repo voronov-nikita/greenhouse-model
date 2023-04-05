@@ -27,11 +27,14 @@ void setup() {
 }
 
 void loop() {
-  // формирование списка со значениями датчика почвы
-  int command = Serial.parseInt();
-  switch(command){
-    case 1: data_soil_sensors(8); break;
-    case 2: data_dh_sensors(4); break;
+  
+  int int_command = Serial.parseInt();
+  String command = (String) int_command;
+  int first = command.substring(0, 1).toInt();
+  int second = command.substring(1, 2).toInt();
+  switch(first){
+    case 1: data_soil_sensors(second); break;
+    case 2: data_dh_sensors(second); break;
     case 3: open_close(); break;
     
   }                   
