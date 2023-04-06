@@ -28,11 +28,11 @@ void setup() {
 
 void loop() {
   
-  int int_command = Serial.parseInt();
-  String command = (String) int_command;
-  int first = command.substring(0, 1).toInt();
-  int second = command.substring(1, 2).toInt();
-  switch(first){
+  String command = (String) Serial.parseInt();
+  // здесь мы распределяем что есть команда, а что пин для опроса
+  String first = command.substring(0, 1);
+  int second = command.substring(1).toInt();
+  switch(first.toInt()){
     case 1: data_soil_sensors(second); break;
     case 2: data_dh_sensors(second); break;
     case 3: open_close(); break;
@@ -47,9 +47,9 @@ void data_soil_sensors(int pin){
   dw(pin, 1);
   delay(10);
     
-  float sensor_value = ar(list_pin_read[pin-7]);
+  float sensor_value = ar(list_pin_read[pin-7-1]);
   dw(pin, 0);
-  Serial.println(map(sensor_value, 0.0, 1023.0, 0.0, 100.0));
+  Serial.println(map(sensor_value, 0, 1023, 0, 100));
 }
 
 //  формирование ответа на запрос определенного пина у датчика DH11.
