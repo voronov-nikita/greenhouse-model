@@ -7,6 +7,8 @@ This is a continuation of the repository about the application for a smart green
 
 Проект подготовлен учениками 10 класса школы №1532 для принятия участия в конференции ["Инженеры будущего"](https://conf.profil.mos.ru/inj), ["Наука для жизни"](https://conf.profil.mos.ru/academ), [~~Курчатовский проект~~](https://conf.profil.mos.ru/kur).
 
+> Курчатовский проект не подходит по критериям, поэтому о нем не будет идти ресь дальше. Наш проект не прошел только на одной из трех конференциях. При этом, "Инженеры будущего" и "Наука для жизни" не писали отрицательных коментариев по нашей работе.
+
 ## **В задачи проекта входят:**
 1. Разработка мобильного приложения для обеспечения удаленным управлением теплицей.
 2. Разработка сайта с подробной информацией о приложении и возможностью его установки.
@@ -18,14 +20,18 @@ This is a continuation of the repository about the application for a smart green
 
 В связи с тем, что сервер, с которого наше приложение изначально брало данные, был закрыт по причине окончания проведения предпрофессиональной олимпиады, нами было принято решение написать собственный web-сервер под микро-компьютер [Raspberry pi 3](https://en.wikipedia.org/wiki/Raspberry_Pi). Данный девайс способен выполнить необходимую задачу - принимать API запросы и обрабатывать их в реальном времени.
 
-Чтобы сервер мог выдавать какой-либо ответ, необходимо, чтобы он мог управлять неким процессом. В нашем случае - процесс сбора данных с платы микро-контроллера [Arduino Nano](https://en.wikipedia.org/wiki/Arduino_Nano)
+Чтобы сервер мог выдавать какой-либо ответ, необходимо, чтобы он мог управлять неким процессом. В нашем случае - процесс сбора данных с платы микро-контроллера [Arduino Nano](https://en.wikipedia.org/wiki/Arduino_Nano).
+
 Для осуществдения сбора данных о `температуре` и `влажности` воздуха был использован датчик температуры и влажности воздуха [DHT11](https://arduinomaster.ru/datchiki-arduino/datchiki-temperatury-i-vlazhnosti-dht11-dht22/), [схема подключения](/greenhouse/shema-dht11-300x193.jpg). Опрашивание датчика происходит в момент отправки ```get()``` запроса на сервер.
+
+Для осущетсвления сблра данных о влажности почвы было принято решение использовать [датчик влажности почвы arduino](https://3d-diy.ru/wiki/arduino-datchiki/datchik-vlazhnosti-pochvy-arduino/). На выходе, после опрашивания датчика, мы получаем ответ в % от датчика. Raspberry формирует из этого значения новый json и отправляет клиенту, клиент же уже обрабатывает полученный json.
+
+Raspberry и Arduino Nano общаются через последовательный порт подключения, используя USB-miniusb.
 
 
 ## **Useful Links**
-1. [predprof.olimpiada.ru](https://predprof.olimpiada.ru/)
-2. [conf.profil.mos.ru](https://conf.profil.mos.ru/)
-3. [teplica-predprof (github)](https://github.com/voronov-nikita/teplica-predprof)
-4. []()
+1. [predprof.olimpiada.ru](https://predprof.olimpiada.ru/) - сайт предпрофессиональной олимпиады.
+2. [conf.profil.mos.ru](https://conf.profil.mos.ru/) - сайт с конференциями.
+3. [teplica-predprof (github)](https://github.com/voronov-nikita/teplica-predprof) - репозиторий, в котором находится исходный код нашего приложения и сайта.
 
 ###### 06.04.2023
