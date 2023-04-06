@@ -16,7 +16,7 @@ def index():
 def index1():
     pin = 2
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -30,7 +30,7 @@ def index1():
 def index2():
     pin = 3
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -44,7 +44,7 @@ def index2():
 def index3():
     pin = 4
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -58,7 +58,7 @@ def index3():
 def index4():
     pin = 5
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(f"b'2{pin}'")
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -74,7 +74,7 @@ def index4():
 def index5():
     pin = 7
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -87,7 +87,7 @@ def index5():
 def index6():
     pin = 8
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -100,7 +100,7 @@ def index6():
 def index7():
     pin = 9
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -113,7 +113,7 @@ def index7():
 def index8():
     pin = 10
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -126,7 +126,7 @@ def index8():
 def index9():
     pin = 11
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -139,7 +139,7 @@ def index9():
 def index10():
     pin = 12
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(f"b'1{pin}'")
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
