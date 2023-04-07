@@ -1,7 +1,8 @@
 from flask import Flask, jsonify
 import serial
 
-PORT = "COM5"
+# порт для Raspberry pi 3
+PORT = "/dev/ttyACM0"
 
 app = Flask(__name__)
 
@@ -12,11 +13,11 @@ def index():
 
 
 # <---------------- Температуры и влажности воздуха --------------->
-@app.route('/ppo_it/api/temp_hum/1')
+@app.route('/temp_hum/1')
 def index1():
     pin = 2
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(b'22')
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -26,11 +27,11 @@ def index1():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/temp_hum/2')
+@app.route('/temp_hum/2')
 def index2():
     pin = 3
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(b'23')
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -40,11 +41,11 @@ def index2():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/temp_hum/3')
+@app.route('/temp_hum/3')
 def index3():
     pin = 4
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(b'24')
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -54,11 +55,11 @@ def index3():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/temp_hum/4')
+@app.route('/temp_hum/4')
 def index4():
     pin = 5
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'2{pin}'")
+    ser.write(b'25')
     data_value = ser.readline().decode('utf-8').split()
     data = {
         'pin': pin,
@@ -70,11 +71,11 @@ def index4():
 
 # <---------------- Почва --------------->
 
-@app.route('/ppo_it/api/hum/1')
+@app.route('/hum/1')
 def index5():
     pin = 7
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(b'17')
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -83,11 +84,11 @@ def index5():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/hum/2')
+@app.route('/hum/2')
 def index6():
     pin = 8
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(b'18')
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -96,11 +97,11 @@ def index6():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/hum/3')
+@app.route('/hum/3')
 def index7():
     pin = 9
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(b'19')
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -109,11 +110,11 @@ def index7():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/hum/4')
+@app.route('/hum/4')
 def index8():
     pin = 10
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(b'110')
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -122,11 +123,11 @@ def index8():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/hum/5')
+@app.route('/hum/5')
 def index9():
     pin = 11
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(b'111')
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -135,11 +136,11 @@ def index9():
     return jsonify(data)
 
 
-@app.route('/ppo_it/api/hum/6')
+@app.route('/hum/6')
 def index10():
     pin = 12
     ser = serial.Serial(PORT, 9600)
-    ser.write(f"b'1{pin}'")
+    ser.write(b'112')
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
@@ -149,13 +150,13 @@ def index10():
 
 
 # <---------------- Сервопривод --------------->
-@app.route('/ppo_it/api/fork_drive/')
+@app.route('/fork_drive/')
 def index11():
     ser = serial.Serial(PORT, 9600)
     ser.write(b"3")
-    return "Hello"
+    return "True"
 
 
 # старт сервера
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True, host='192.168.43.147', port=5000)
