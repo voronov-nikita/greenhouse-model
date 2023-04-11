@@ -26,7 +26,10 @@ This is a continuation of the repository about the application for a smart green
 
 Для осущетсвления сблра данных о влажности почвы было принято решение использовать [датчик влажности почвы arduino](https://3d-diy.ru/wiki/arduino-datchiki/datchik-vlazhnosti-pochvy-arduino/). На выходе, после опрашивания датчика, мы получаем ответ в % от датчика. Raspberry формирует из этого значения новый json и отправляет клиенту, клиент же уже обрабатывает полученный json.
 
-Raspberry и Arduino Nano общаются через последовательный порт подключения, используя USB-miniusb.
+Raspberry и Arduino Nano общаются через последовательный порт подключения, используя USB-miniUSB.
+
+
+![Схема](/images/greenhouse-sheme.png)
 
 
 ## **Useful Links**
@@ -34,4 +37,4 @@ Raspberry и Arduino Nano общаются через последователь
 2. [conf.profil.mos.ru](https://conf.profil.mos.ru/) - сайт с конференциями.
 3. [teplica-predprof (github)](https://github.com/voronov-nikita/teplica-predprof) - репозиторий, в котором находится исходный код нашего приложения и сайта.
 
-###### 06.04.2023
+###### 11.04.2023
