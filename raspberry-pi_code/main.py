@@ -79,7 +79,7 @@ def index5():
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
-        'humidity': float(data_value[1])
+        'humidity': float(data_value[0])
     }
     return jsonify(data)
 
@@ -92,7 +92,7 @@ def index6():
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
-        'humidity': float(data_value[1])
+        'humidity': float(data_value[0])
     }
     return jsonify(data)
 
@@ -105,7 +105,7 @@ def index7():
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
-        'humidity': float(data_value[1])
+        'humidity': float(data_value[0])
     }
     return jsonify(data)
 
@@ -118,7 +118,7 @@ def index8():
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
-        'humidity': float(data_value[1])
+        'humidity': float(data_value[0])
     }
     return jsonify(data)
 
@@ -131,7 +131,7 @@ def index9():
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
-        'humidity': float(data_value[1])
+        'humidity': float(data_value[0])
     }
     return jsonify(data)
 
@@ -144,7 +144,7 @@ def index10():
     data_value = ser.readline().decode('utf-8')
     data = {
         'pin': pin,
-        'humidity': float(data_value[1])
+        'humidity': float(data_value[0])
     }
     return jsonify(data)
 
