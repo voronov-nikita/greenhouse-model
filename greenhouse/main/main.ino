@@ -33,8 +33,11 @@ void loop() {
   String first = command.substring(0, 1);
   int second = command.substring(1).toInt();
   switch(first.toInt()){
+    // 1 - опрашивание почвы
     case 1: data_soil_sensors(second); break;
+    // 2 - опрашивание воздуха 
     case 2: data_dh_sensors(second); break;
+    // 
     case 3: open_close(); break;
     
   }                   
