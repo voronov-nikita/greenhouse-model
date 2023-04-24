@@ -50,7 +50,7 @@ void data_soil_sensors(int pin){
   dw(pin, 1);
   delay(10);
     
-  float sensor_value = ar(list_pin_read[pin-7-1]);
+  float sensor_value = ar(list_pin_read[pin-7]);
   dw(pin, 0);
   Serial.println(map(sensor_value, 0, 1023, 0, 100));
 }
@@ -72,5 +72,5 @@ void data_dh_sensors(int pin){
 void open_close(){
   int angle = servo.read();
   if (angle==90) servo.write(0);
-  if (angle==0) servo.write(90);
+  else servo.write(90);
 }
